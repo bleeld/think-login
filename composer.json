@@ -1,0 +1,43 @@
+{
+    "name": "bleeld/think-login",
+    "description": "ThinkPHP 8 多方式登录插件，支持多种登录方式（如用户名/密码、邮箱、手机号等），并提供灵活的扩展接口。",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "think\\": "src/"
+        },
+        "files": [
+            "src/function/common.php"
+        ]
+    },
+    "autoload-dev": { 
+        "psr-4": {
+            "tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "bleeld",
+            "email": "1755773846@qq.com"
+        }
+    ],
+
+    "scripts": {
+        "post-install-cmd": [
+            "php think token:config"
+        ],
+        "phpstan": "php phpstan.php"
+    },
+    "extra": {
+        "think": {
+            "config":{
+                "login": "src/config/login.php"
+            }
+        }
+    },
+    "require": {
+        "php": "^8.0.0"
+    }
+}
